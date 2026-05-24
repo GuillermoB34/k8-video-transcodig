@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-indexed
+  namespace: pf
+data:
+  default.conf: |
+    server {
+        listen       80;
+        server_name  localhost;
+    
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+            autoindex on;
+        }
+        
+        location = /50x.html {
+            root   /usr/share/nginx/html;
+        }
+    }
+  index.html: |
+       <html>
+        <head>
+            <meta charset="UTF-8" />
+            <title>Videos Transcodificados</title>
+        </head>
+        <body>
+            <h1>Videos Transcodificados</h1>
+        </body>
+        </html>
+   
