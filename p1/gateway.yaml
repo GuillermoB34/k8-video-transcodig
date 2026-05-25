@@ -41,7 +41,7 @@ spec:
         type: PathPrefix
         value: /x264-fn-events
     backendRefs: # Servicio de Transcodificación
-    - name: sv-transcoding
+    - name: svc-transcoding
       port: 8080
 
 ---
@@ -63,5 +63,5 @@ spec:
         type: PathPrefix
         value: /encodedVideos
     backendRefs: 
-    - name: sv-upload-nginx
+    - name: svc-upload-nginx
       port: 80
