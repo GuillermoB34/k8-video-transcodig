@@ -18,9 +18,11 @@ spec:
   listeners:
   - name: http-80
     protocol: HTTP
+    hostname: "localhost"
     port: 80
   - name: http-8080
     protocol: HTTP
+    hostname: "localhost"
     port: 8080
 ---
 #HTTP Route TRANSCODING 
