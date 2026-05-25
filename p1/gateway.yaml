@@ -20,14 +20,9 @@ spec:
     - type: IPAddress
       value: 192.168.1.50
   listeners:
-  - name: http-80
+  - name: http-listener
     protocol: HTTP
-    hostname: "localhost"
-    port: 80
-  - name: http-8080
-    protocol: HTTP
-    hostname: "localhost"
-    port: 8080
+    
 ---
 #HTTP Route TRANSCODING 
 apiVersion: gateway.networking.k8s.io/v1
@@ -38,7 +33,8 @@ metadata:
 spec:
   parentRefs: # Referencia al Gateway
   - name: gateway
-    sectionName: http-8080
+    sectionName: http-listener
+    port: 8080
   hostnames:
   - localhost
   rules:
@@ -60,7 +56,8 @@ metadata:
 spec:
   parentRefs:
   - name: gateway
-    sectionName: http-80
+    sectionName: http-listener
+    port: 80
   hostnames:
   - localhost
   rules:
