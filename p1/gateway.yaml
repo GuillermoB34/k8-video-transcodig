@@ -57,9 +57,12 @@ spec:
   parentRefs:
   - name: gateway
     sectionName: http-80
+  hostnames:
+  - "*"
   rules:
   - matches:
     - path:
+        type: PathPrefix
         value: /encodedVideos
     backendRefs: 
     - name: svc-upload-nginx
