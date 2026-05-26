@@ -6,10 +6,10 @@ metadata:
 data:
   default.conf: |
     server {
-        listen       80;    
+        listen       80;
         location /encodedVideos {
             alias   /usr/share/nginx/html;
-            index  index.html index.htm;
+            index  index.html;
             autoindex on;
         }
         
