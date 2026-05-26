@@ -60,7 +60,6 @@ spec:
   rules:
   - matches:
     - path:
-        type: PathPrefix
         value: /encodedVideos
     backendRefs: 
     - name: svc-upload-nginx
