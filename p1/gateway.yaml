@@ -37,8 +37,6 @@ spec:
   parentRefs: # Referencia al Gateway
   - name: gateway
     sectionName: http-8080
-  hostnames:
-  - localhost
   rules:
   - matches:
     - path:
@@ -59,8 +57,6 @@ spec:
   parentRefs:
   - name: gateway
     sectionName: http-80
-  hostnames:
-  - localhost
   rules:
   - matches:
     - path:
