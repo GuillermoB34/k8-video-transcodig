@@ -6,9 +6,7 @@ metadata:
 data:
   default.conf: |
     server {
-        listen       80;
-        server_name  _;
-    
+        listen       80;    
         location /encodedVideos {
             alias   /usr/share/nginx/html;
             index  index.html index.htm;
