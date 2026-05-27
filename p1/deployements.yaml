@@ -24,7 +24,7 @@ spec:
           - name: EVENT_CONSUMER_URL
             value: ""
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
