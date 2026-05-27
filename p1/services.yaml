@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-upload-nginx
-  namespace: pf
+  namespace: encoding
 spec:
   type: ClusterIP
   selector:
@@ -19,7 +19,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: svc-transcoding
-  namespace: pf
+  namespace: encoding
 spec:
   type: ClusterIP
   selector:
