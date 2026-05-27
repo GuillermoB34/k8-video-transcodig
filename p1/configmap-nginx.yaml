@@ -8,8 +8,8 @@ data:
     server {
         listen 80;
         
-        location /encodedVideos {
-            alias /usr/share/nginx/html/encodedVideos;
+        location /encodedVideos/ {
+            alias /usr/share/nginx/html/encodedVideos/;
             index  index.html;
             autoindex on;
         }
@@ -18,7 +18,7 @@ data:
             root   /usr/share/nginx/html;
         }
     }
-    
+
   index.html: |
     <html>
      <head>
