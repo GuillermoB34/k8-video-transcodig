@@ -9,7 +9,7 @@ data:
         listen 80;
         
         location /encodedVideos {
-            root /usr/share/nginx/html/;
+            alias /usr/share/nginx/html/encodedVideos;
             index  index.html;
             autoindex on;
         }
