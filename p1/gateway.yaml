@@ -18,9 +18,6 @@ spec:
               - name: http-80
                 nodePort: 30080
                 port: 80
-              - name: http-8080
-                nodePort: 30443
-                port: 8080 
 
 ---
 # Gatway Class Config 
@@ -49,9 +46,6 @@ spec:
   - name: http-80
     protocol: HTTP
     port: 80
-  - name: http-8080
-    protocol: HTTP
-    port: 8080
 ---
 #HTTP Route TRANSCODING 
 apiVersion: gateway.networking.k8s.io/v1
@@ -62,7 +56,7 @@ metadata:
 spec:
   parentRefs: # Referencia al Gateway
   - name: gateway
-    sectionName: http-8080
+    sectionName: http-80
   rules:
   - matches:
     - path:
