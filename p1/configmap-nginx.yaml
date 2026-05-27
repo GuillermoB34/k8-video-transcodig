@@ -10,11 +10,10 @@ data:
         server_name  _;
 
         # Serve the emptyDir content under /encodedVideos
-        location /encodedVideos/ {
-            alias  /usr/share/nginx/html/;
+        location /encodedVideos {
+            alias  /usr/share/nginx/html;
             index  index.html;
             autoindex on;
-            try_files $uri $uri/ =404;
         }
 
         location = /50x.html {
