@@ -18,7 +18,7 @@ spec:
         image: cloudmedialab/x264-fn-events:1.0
         env:
           - name: SERVICE_PORT
-            value: "8080"
+            value: "80"
           - name: SERVICE_PATH
             value: "/x264-fn-events"
           - name: EVENT_CONSUMER_URL
