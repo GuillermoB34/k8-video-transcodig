@@ -7,9 +7,10 @@ data:
   default.conf: |
     server {
         listen       80;
+        server_name  localhost;
         location /encodedVideos {
-            alias   /usr/share/nginx/html;
-            index  index.html;
+            root   /usr/share/nginx/html;
+            index  index.html  index.html;
             autoindex on;
         }
         

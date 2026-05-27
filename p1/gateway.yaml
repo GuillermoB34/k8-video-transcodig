@@ -45,9 +45,6 @@ metadata:
   namespace: encoding
 spec:
   gatewayClassName: envoy-gwc
-  addresses:
-    - type: IPAddress
-      value: 192.168.1.50
   listeners:
   - name: http-80
     protocol: HTTP
