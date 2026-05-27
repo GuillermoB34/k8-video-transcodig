@@ -16,9 +16,6 @@ spec:
       containers:
       - name: transcoding
         image: cloudmedialab/x264-fn-events:1.0
-        volumeMounts:
-          - name: video-transcoded
-            mountPath: /app/upload/encodedVideos
         env:
           - name: SERVICE_PORT
             value: "80"
