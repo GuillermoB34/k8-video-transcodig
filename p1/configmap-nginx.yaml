@@ -7,24 +7,27 @@ data:
   default.conf: |
     server {
         listen       80;
-        server_name  localhost;
-        location /encodedVideos {
-            root   /usr/share/nginx/html;
-            index  index.html  index.html;
+        server_name  _;
+
+        # Serve the emptyDir content under /encodedVideos
+        location /encodedVideos/ {
+            alias  /usr/share/nginx/html/;
+            index  index.html;
             autoindex on;
+            try_files $uri $uri/ =404;
         }
-        
+
         location = /50x.html {
             root   /usr/share/nginx/html;
         }
     }
   index.html: |
-       <html>
-        <head>
-            <meta charset="UTF-8" />
-            <title>Videos Transcodificados</title>
-        </head>
-        <body>
-            <h1>Videos Transcodificados</h1>
-        </body>
-        </html>
+    <html>
+     <head>
+         <meta charset="UTF-8" />
+         <title>Videos Transcodificados</title>
+     </head>
+     <body>
+         <h1>Videos Transcodificados</h1>
+     </body>
+     </html>
