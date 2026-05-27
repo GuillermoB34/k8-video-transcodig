@@ -6,12 +6,13 @@ metadata:
 data:
   default.conf: |
     server {
-        listen       80;
-        server_name  _;
-
-        # Serve the emptyDir content under /encodedVideos
+        listen 80;
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
         location /encodedVideos {
-            alias  /usr/share/nginx/html;
+            alias  /usr/share/nginx/html/;
             index  index.html;
             autoindex on;
         }
