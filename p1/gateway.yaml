@@ -64,7 +64,7 @@ spec:
         value: /x264-fn-events
     backendRefs: # Servicio de Transcodificación
     - name: svc-transcoding
-      port: 8080
+      port: 80
 
 ---
 #HTTP ROUTE UPLOAD-NGINX
