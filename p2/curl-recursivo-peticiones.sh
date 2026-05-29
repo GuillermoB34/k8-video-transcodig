@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in {10..100}
+for i in $(seq "$1" "$2")
 do
 curl -v "http://192.168.56.3:30080/x264-fn-events" \
     -X POST \
