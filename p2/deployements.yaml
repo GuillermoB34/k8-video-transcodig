@@ -18,13 +18,26 @@ spec:
         image: cloudmedialab/x264-fn-events:1.0
         env:
           - name: SERVICE_PORT
-            value: "80"
+            value: "8080"
           - name: SERVICE_PATH
             value: "/x264-fn-events"
           - name: EVENT_CONSUMER_URL
             value: ""
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+      - name: sidecar-proxy
+        image: envoyproxy/envoy:distroless-dev-1e9d667f49f8b4593de89a9d0b878e18fd00314c
+        volumeMounts:
+          - name: transcoding-envoy-config
+            mountPath: /etc/envoy/envoy.yaml
+            subPath: envoy.yaml
+        ports:
+        - containerPort: 10000
+        - containerPort: 10001
+      volumes:
+      - name: transcoding-envoy-config
+        configMap:
+          name: transcoding-envoy-config
 ---
 apiVersion: apps/v1
 kind: Deployment

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: transcoding-envoy-config
-  namespace: transcoding
+  namespace: encoding
 data:
   envoy.yaml: |
     admin:
@@ -35,7 +35,7 @@ data:
                     domains: ["*"]
                     routes:
                     - match:
-                        prefix: "/"
+                        prefix: "/x264-fn-events"
                       route:
                          cluster: transcoding_service
                          timeout: 0s

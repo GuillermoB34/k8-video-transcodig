@@ -26,4 +26,4 @@ spec:
     app: transcoding
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 10000
