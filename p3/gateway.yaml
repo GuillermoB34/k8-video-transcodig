@@ -98,7 +98,7 @@ metadata:
   namespace: metrics
 spec:
   hostnames:
-      - metrics.tarea.cn.uv.es
+    - metrics.tarea.cn.uv.es
   parentRefs:
   - name: gateway
     sectionName: http-80
