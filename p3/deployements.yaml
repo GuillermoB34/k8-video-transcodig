@@ -7,11 +7,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: transcoding
+      - app: transcoding
+      - app: podkubemetrics
   template:
     metadata:
       labels:
-        app: transcoding
+        - app: transcoding
+        - app: podkubemetrics
     spec:
       containers:
       - name: transcoding
@@ -22,6 +24,8 @@ spec:
           - name: SERVICE_PATH
             value: "/x264-fn-events"
           - name: EVENT_CONSUMER_URL
+            value: ""
+          - name: OBSERVABLE
             value: ""
         ports:
         - containerPort: 8080

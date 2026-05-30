@@ -1,0 +1,39 @@
+# PV para el almacenamiento local
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-localstorage
+spec:
+  storageClassName: local-storage
+  capacity:
+    storage: 500Mi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem #Indica que es un archivo de ficheros
+  local:
+    path: /mnt/k8s/ssd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - vmk8s #Nombre del nodo de Kubernetes
+
+---
+# PVC para mongodb
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-mongodb
+  namespace: metrics
+
+spec:
+  # spec.storageClassName field from the PersistentVolume to match
+  storageClassName: local-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
