@@ -7,13 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      - app: transcoding
-      - app: podkubemetrics
+      app: podkubemetrics
   template:
     metadata:
       labels:
-        - app: transcoding
-        - app: podkubemetrics
+        app: podkubemetrics
     spec:
       containers:
       - name: transcoding
