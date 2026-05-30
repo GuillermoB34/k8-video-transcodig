@@ -1,0 +1,3 @@
+[submodule "p3/PodInsights"]
+	path = p3/PodInsights
+	url = https://estudianteTWCAM@routerdi1315.uv.es:10000/curso-k8s/PodInsights.git
