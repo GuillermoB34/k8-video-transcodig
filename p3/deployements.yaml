@@ -71,6 +71,9 @@ spec:
         - containerPort: 8080
       - name: nginx
         image: nginx:1.14.2-alpine
+        env:
+          - name: EMPTY_VAR
+            value: ""
         volumeMounts:
           - name: video-transcoded
             mountPath: /usr/share/nginx/html
