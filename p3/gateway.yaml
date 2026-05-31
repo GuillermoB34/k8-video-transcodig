@@ -5,6 +5,9 @@ metadata:
   name: envoy-proxy
   namespace: encoding
 spec:
+  env:
+    - name: TEST
+      value: ""
   provider:
     type: Kubernetes
     kubernetes:
