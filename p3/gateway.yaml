@@ -110,4 +110,5 @@ spec:
             value: /stats
       backendRefs:
         - name: metrics-service
+          namespace: metrics
           port: 8080
