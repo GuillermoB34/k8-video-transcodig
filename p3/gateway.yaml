@@ -5,9 +5,6 @@ metadata:
   name: envoy-proxy
   namespace: encoding
 spec:
-  env:
-    - name: TEST
-      value: ""
   provider:
     type: Kubernetes
     kubernetes:
@@ -21,6 +18,13 @@ spec:
                 - name: http-80
                   nodePort: 30080
                   port: 80
+      envoyDeployment:
+        pod:
+          containers:
+            - name: envoy
+              env:
+                - name: TEST
+                  value: ""
 
 ---
 # Gatway Class Config
