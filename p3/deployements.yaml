@@ -36,6 +36,9 @@ spec:
         ports:
         - containerPort: 10000
         - containerPort: 10001
+        env:
+          - name: EMPTY_VAR
+            value: ""
       volumes:
       - name: transcoding-envoy-config
         configMap:
