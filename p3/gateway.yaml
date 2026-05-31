@@ -107,7 +107,7 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /
+            value: /stats
       backendRefs:
         - name: metrics-service
           port: 8080
